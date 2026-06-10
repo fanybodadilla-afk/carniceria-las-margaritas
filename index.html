@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carnicería Las Margaritas | Calidad y Frescura Premium</title>
+  <meta name="description" content="Aplicación móvil premium de Carnicería Las Margaritas. Ofrecemos los mejores cortes de Res, Puerco, Pollo, Chorizo y Abarrotes de alta calidad a domicilio.">
+  <!-- Google Fonts: Inter para texto, Outfit para encabezados elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome para iconos modernos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Contenedor Principal (Simulación de Teléfono Móvil en Escritorio) -->
+  <div class="phone-frame">
+    <!-- Bocina del Teléfono -->
+    <div class="phone-speaker"></div>
+    <!-- Cámara/Notch del Teléfono -->
+    <div class="phone-notch"></div>
+    
+    <!-- Pantalla del Teléfono (Viewport de la Aplicación) -->
+    <div class="phone-screen" id="phone-screen">
+      
+      <!-- ================= PANTALLA DE BIENVENIDA (WELCOME SCREEN) ================= -->
+      <section id="welcome-screen" class="view welcome-view active">
+        <!-- Fondo Decorativo -->
+        <div class="welcome-bg-overlay"></div>
+        <div class="welcome-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+        </div>
+        
+        <div class="welcome-content">
+          <!-- Logo de Bienvenida Gigante (SVG Premium) -->
+          <div class="welcome-logo-container">
+            <svg class="welcome-logo" viewBox="0 0 200 200">
+              <!-- Círculo Dorado Exterior -->
+              <circle cx="100" cy="100" r="95" fill="none" stroke="#D4AF37" stroke-width="4" stroke-dasharray="5 3"/>
+              <!-- Sello Rojo Interior -->
+              <circle cx="100" cy="100" r="88" fill="#D32F2F" stroke="#FFFFFF" stroke-width="3"/>
+              <!-- Iconografía (Flor Margarita + Cuchillo de Chef/Estrella) -->
+              <!-- Hojas de Margarita -->
+              <g transform="translate(100, 92)" fill="#FFFFFF">
+                <ellipse cx="0" cy="-20" rx="6" ry="15"/>
+                <ellipse cx="0" cy="20" rx="6" ry="15"/>
+                <ellipse cx="-20" cy="0" rx="15" ry="6"/>
+                <ellipse cx="20" cy="0" rx="15" ry="6"/>
+                <ellipse cx="-14" cy="-14" rx="10" ry="10" transform="rotate(45 -14 -14)"/>
+                <ellipse cx="14" cy="14" rx="10" ry="10" transform="rotate(45 14 14)"/>
+                <ellipse cx="-14" cy="14" rx="10" ry="10" transform="rotate(-45 -14 14)"/>
+                <ellipse cx="14" cy="-14" rx="10" ry="10" transform="rotate(-45 14 -14)"/>
+                <!-- Centro de la Margarita (Dorado) -->
+                <circle cx="0" cy="0" r="10" fill="#D4AF37" stroke="#FFFFFF" stroke-width="1.5"/>
+              </g>
+              <!-- Dos Cuchillos de Carnicero Cruzados detrás de la margarita (Sutil silueta blanca) -->
+              <path d="M 65,145 L 85,125" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+              <path d="M 68,142 L 53,150 C 50,152 46,148 48,145 L 56,130" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+              
+              <path d="M 135,145 L 115,125" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+              <path d="M 132,142 L 147,150 C 150,152 154,148 152,145 L 144,130" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+              
+              <!-- Corona de Estrellas -->
+              <g fill="#D4AF37" transform="translate(100, 100)">
+                <polygon points="0,-72 3,-65 10,-65 5,-60 7,-53 0,-57 -7,-53 -5,-60 -10,-65 -3,-65" transform="rotate(35)"/>
+                <polygon points="0,-72 3,-65 10,-65 5,-60 7,-53 0,-57 -7,-53 -5,-60 -10,-65 -3,-65" transform="rotate(-35)"/>
+              </g>
+              
+              <!-- Textos del Sello -->
+              <path id="textPathUpper" d="M 22,100 A 78,78 0 1,1 178,100" fill="none" />
+              <path id="textPathLower" d="M 178,100 A 78,78 0 0,1 22,100" fill="none" />
+              
+              <text fill="#FFFFFF" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" letter-spacing="1.5">
+                <textPath href="#textPathUpper" startOffset="50%" text-anchor="middle">CARNICERÍA</textPath>
+              </text>
+              <text fill="#D4AF37" font-family="'Outfit', sans-serif" font-size="11" font-weight="800" letter-spacing="1.2">
+                <textPath href="#textPathLower" startOffset="50%" text-anchor="middle">LAS MARGARITAS</textPath>
+              </text>
+            </svg>
+          </div>
+          
+          <!-- Título y Eslogan -->
+          <h1 class="welcome-title">Carnicería <br><span>Las Margaritas</span></h1>
+          <p class="welcome-slogan">Calidad, variedad y frescura en cada corte, directo a tu mesa</p>
+          
+          <div class="welcome-badge">
+            <i class="fa-solid fa-medal gold-medal"></i>
+            <span>Calidad 100% Garantizada</span>
+          </div>
+          
+          <!-- Botón de Inicio con Efecto de Brillo -->
+          <button class="welcome-btn" id="start-app-btn">
+            <span>Ingresar al Menú</span>
+            <i class="fa-solid fa-chevron-right icon-arrow"></i>
+            <div class="shine"></div>
+          </button>
+        </div>
+        
+        <!-- Pie de Bienvenida -->
+        <footer class="welcome-footer">
+          <p>Desde 23 de junio #64</p>
+        </footer>
+      </section>
+
+      <!-- ================= CAPA DE LA APLICACIÓN PRINCIPAL (APP SHELL) ================= -->
+      <div id="app-shell" class="app-shell hidden">
+        
+        <!-- HEADER PERSISTENTE -->
+        <header class="app-header">
+          <div class="header-left">
+            <!-- Logo Completo Rediseñado más Chico e Interactivo -->
+            <div class="mini-logo">
+              <svg class="header-full-logo" viewBox="0 0 200 200" width="44" height="44">
+                <!-- Círculo Dorado Exterior -->
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#D4AF37" stroke-width="4" stroke-dasharray="5 3"/>
+                <!-- Sello Rojo Interior -->
+                <circle cx="100" cy="100" r="88" fill="#D32F2F" stroke="#FFFFFF" stroke-width="3"/>
+                <!-- Flor Margarita en el centro -->
+                <g transform="translate(100, 92)" fill="#FFFFFF">
+                  <ellipse cx="0" cy="-20" rx="6" ry="15"/>
+                  <ellipse cx="0" cy="20" rx="6" ry="15"/>
+                  <ellipse cx="-20" cy="0" rx="15" ry="6"/>
+                  <ellipse cx="20" cy="0" rx="15" ry="6"/>
+                  <ellipse cx="-14" cy="-14" rx="10" ry="10" transform="rotate(45 -14 -14)"/>
+                  <ellipse cx="14" cy="14" rx="10" ry="10" transform="rotate(45 14 14)"/>
+                  <ellipse cx="-14" cy="14" rx="10" ry="10" transform="rotate(-45 -14 14)"/>
+                  <ellipse cx="14" cy="-14" rx="10" ry="10" transform="rotate(-45 14 -14)"/>
+                  <circle cx="0" cy="0" r="10" fill="#D4AF37" stroke="#FFFFFF" stroke-width="1.5"/>
+                </g>
+                <!-- Textos del Sello -->
+                <path id="headerTextPathUpper" d="M 22,100 A 78,78 0 1,1 178,100" fill="none" />
+                <path id="headerTextPathLower" d="M 178,100 A 78,78 0 0,1 22,100" fill="none" />
+                
+                <text fill="#FFFFFF" font-family="'Outfit', sans-serif" font-size="13" font-weight="900" letter-spacing="1.5">
+                  <textPath href="#headerTextPathUpper" startOffset="50%" text-anchor="middle">CARNICERÍA</textPath>
+                </text>
+                <text fill="#D4AF37" font-family="'Outfit', sans-serif" font-size="12" font-weight="900" letter-spacing="1.2">
+                  <textPath href="#headerTextPathLower" startOffset="50%" text-anchor="middle">LAS MARGAITAS</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="header-brand">
+              <h2>Las Margaritas</h2>
+              <span class="online-indicator"><span class="dot"></span> Abierto ahora</span>
+            </div>
+          </div>
+          <div class="header-right">
+            <!-- Icono de Notificaciones Simulado -->
+            <button class="header-action-btn" id="notif-btn" title="Promociones y Ofertas">
+              <i class="fa-solid fa-bell bell-icon"></i>
+              <span class="badge hidden" id="notif-badge">0</span>
+            </button>
+            <!-- Carrito de Compras en Cabezal en el Lado Derecho -->
+            <button class="header-action-btn" id="open-cart-btn" title="Ver mi pedido">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="badge hidden" id="open-cart-badge">0</span>
+            </button>
+          </div>
+        </header>
+
+        <!-- CONTENIDO DINÁMICO (VISTAS) -->
+        <main class="app-content" id="app-content">
+          
+          <!-- VISTA 1: CATÁLOGO DE PRODUCTOS (DEFAULT) -->
+          <section id="catalog-view" class="app-view active">
+            <!-- Banner Rotativo de Promociones Integrado -->
+            <div class="promo-slider-container">
+              <div class="promo-slider" id="promo-slider">
+                <!-- Slides Dinámicos creados por JS -->
+              </div>
+              <div class="slider-dots" id="slider-dots"></div>
+            </div>
+
+            <!-- Buscador de Productos -->
+            <div class="search-container">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="¿Qué se te antoja preparar hoy?..." autocomplete="off">
+                <button class="clear-search-btn hidden" id="clear-search-btn">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Botones de Categorías Grandes y Modernos -->
+            <div class="category-section">
+              <h3 class="section-title">Categorías</h3>
+              <div class="category-grid">
+                <button class="category-btn" data-category="res">
+                  <div class="category-icon-wrapper red-grad">
+                    <i class="fa-solid fa-cow"></i>
+                  </div>
+                  <span>Res</span>
+                </button>
+                <button class="category-btn" data-category="puerco">
+                  <div class="category-icon-wrapper orange-grad">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                  </div>
+                  <span>Puerco</span>
+                </button>
+                <button class="category-btn" data-category="pollo">
+                  <div class="category-icon-wrapper yellow-grad">
+                    <i class="fa-solid fa-egg"></i>
+                  </div>
+                  <span>Pollo</span>
+                </button>
+                <button class="category-btn" data-category="chorizo">
+                  <div class="category-icon-wrapper red-dark-grad">
+                    <i class="fa-solid fa-bacon"></i>
+                  </div>
+                  <span>Chorizo</span>
+                </button>
+                <button class="category-btn" data-category="otros">
+                  <div class="category-icon-wrapper gold-grad">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <span>Otros</span>
+                </button>
+                <button class="category-btn" data-category="abarrotes">
+                  <div class="category-icon-wrapper green-grad">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                  </div>
+                  <span>Abarrotes</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- LISTADO DE PRODUCTOS -->
+            <div class="products-section">
+              <!-- Encabezado de la Categoría Seleccionada -->
+              <div class="category-header">
+                <h3 id="current-category-title">Cortes de Res</h3>
+                <span class="products-count" id="products-count">15 productos</span>
+              </div>
+
+              <!-- Sub-Apartado Especial para Abarrotes / Verduras (Se muestra solo en Abarrotes) -->
+              <div class="abarrotes-subtabs hidden" id="abarrotes-subtabs">
+                <button class="subtab-btn active" data-subtab="todos">Todos</button>
+                <button class="subtab-btn" data-subtab="abarrotes">Abarrotes Secos</button>
+                <button class="subtab-btn" data-subtab="verduras">
+                  <i class="fa-solid fa-carrot text-green"></i> Verduras Frescas
+                </button>
+              </div>
+
+              <!-- Rejilla de Productos -->
+              <div class="products-grid" id="products-grid">
+                <!-- Se inyecta dinámicamente con JS -->
+              </div>
+            </div>
+          </section>
+
+          <!-- VISTA 2: PRODUCTOS MÁS VENDIDOS -->
+          <section id="bestsellers-view" class="app-view">
+            <div class="bestsellers-hero">
+              <div class="hero-overlay"></div>
+              <div class="hero-content">
+                <h2>Cortes Preferidos</h2>
+                <p>Estadísticas en tiempo real de los más vendidos</p>
+              </div>
+            </div>
+
+            <!-- Selector de Periodo Estadístico -->
+            <div class="stats-tab-container">
+              <button class="stats-tab active" data-period="day">
+                <i class="fa-solid fa-bolt"></i> Hoy
+              </button>
+              <button class="stats-tab" data-period="week">
+                <i class="fa-solid fa-calendar-week"></i> Esta Semana
+              </button>
+              <button class="stats-tab" data-period="month">
+                <i class="fa-solid fa-chart-line"></i> Este Mes
+              </button>
+            </div>
+
+            <!-- Lista de los más vendidos -->
+            <div class="bestsellers-content">
+              <div class="section-badge-header">
+                <span>🔥 TOP TENDENCIA</span>
+                <p id="stats-period-desc">Los productos preferidos por nuestros clientes hoy.</p>
+              </div>
+              
+              <div class="bestsellers-grid" id="bestsellers-grid">
+                <!-- Se inyecta dinámicamente -->
+              </div>
+            </div>
+          </section>
+
+          <!-- VISTA 3: PROMOCIONES -->
+          <section id="promos-view" class="app-view">
+            <div class="promos-header-bar">
+              <h2>Promociones Especiales</h2>
+              <p>Ofertas exclusivas de Carnicería Las Margaritas</p>
+            </div>
+
+            <div class="promos-container">
+              <!-- Ofertas Destacadas en Tarjetas Grandes -->
+              <div class="promos-list" id="promos-list">
+                <!-- Dinámico -->
+              </div>
+
+              <!-- Panel de Notificaciones Push Simuladas -->
+              <div class="notif-history-section">
+                <div class="notif-history-header">
+                  <h3><i class="fa-solid fa-bell-concierge"></i> Historial de Alertas</h3>
+                  <button class="clear-notif-btn" id="clear-notifs-btn">Limpiar</button>
+                </div>
+                <div class="notif-history-list" id="notif-history-list">
+                  <div class="empty-history-message">
+                    <i class="fa-regular fa-bell-slash"></i>
+                    <p>No tienes alertas acumuladas por el momento.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VISTA 4: CONTACTO -->
+          <section id="contact-view" class="app-view">
+            <div class="contact-hero">
+              <div class="contact-hero-overlay"></div>
+              <div class="contact-hero-content">
+                <div class="premium-seal">
+                  <i class="fa-solid fa-store"></i>
+                </div>
+                <h2>¿Dónde encontrarnos?</h2>
+                <p>Servicio directo en sucursal y a domicilio</p>
+              </div>
+            </div>
+
+            <div class="contact-details">
+              <!-- Horario de Atención -->
+              <div class="contact-card info-card">
+                <div class="contact-card-icon green"><i class="fa-regular fa-clock"></i></div>
+                <div class="contact-card-info">
+                  <h4>Horario de Atención</h4>
+                  <p>Lunes a Sábado: 7:00 AM - 6:00 PM</p>
+                  <p>Domingos: 7:00 AM - 3:00 PM</p>
+                </div>
+              </div>
+
+              <!-- Dirección Física -->
+              <div class="contact-card" id="address-card">
+                <div class="contact-card-icon red"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-card-info">
+                  <h4>Ubicación</h4>
+                  <p class="address-text">23 de junio #64, Colonia Centro</p>
+                  <span class="subtext">Haz clic para ver mapa de entrega</span>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+              </div>
+
+              <!-- Números de Contacto con acción de WhatsApp -->
+              <div class="contact-card whatsapp-action" data-phone="523312345678" data-text="Hola Carnicería Las Margaritas, me gustaría hacer una consulta.">
+                <div class="contact-card-icon whatsapp"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div class="contact-card-info">
+                  <h4>Número Celular</h4>
+                  <p class="phone-link">+52 33 1234 5678</p>
+                  <span class="action-tag"><i class="fa-brands fa-whatsapp"></i> Chat directo</span>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+              </div>
+
+              <div class="contact-card whatsapp-action" data-phone="523398765432" data-text="Hola Carnicería Las Margaritas, quiero realizar un pedido al teléfono fijo.">
+                <div class="contact-card-icon red"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-card-info">
+                  <h4>Número Telefónico Fijo</h4>
+                  <p class="phone-link">33 9876 5432</p>
+                  <span class="action-tag"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</span>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+              </div>
+
+              <!-- Mapa Interactivo / Estático Simulado -->
+              <div class="map-container">
+                <div class="map-placeholder">
+                  <div class="map-marker">
+                    <i class="fa-solid fa-location-dot red-marker-icon"></i>
+                    <div class="pulse-ring"></div>
+                  </div>
+                  <div class="map-label">
+                    <span>Carnicería Las Margaritas</span>
+                    <small>23 de junio #64</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VISTA 5: CARRITO DE COMPRAS -->
+          <section id="cart-view" class="app-view">
+            <div class="cart-header-bar">
+              <h2>Tu Pedido</h2>
+              <button class="empty-cart-btn" id="empty-cart-btn" title="Vaciar Carrito">
+                <i class="fa-regular fa-trash-can"></i> Vaciar
+              </button>
+            </div>
+
+            <!-- Contenido del Carrito -->
+            <div class="cart-container" id="cart-container">
+              
+              <!-- ESTADO VACÍO -->
+              <div class="cart-empty" id="cart-empty-view">
+                <div class="empty-icon-container">
+                  <i class="fa-solid fa-basket-shopping empty-cart-basket"></i>
+                </div>
+                <h3>Tu carrito está vacío</h3>
+                <p>Explora nuestro catálogo premium y agrega los mejores cortes y abarrotes para tu hogar.</p>
+                <button class="back-to-shop-btn" id="back-to-shop-btn">Ir al Catálogo</button>
+              </div>
+
+              <!-- LISTADO DE ITEMS E INFORMACIÓN DE PAGO -->
+              <div class="cart-filled hidden" id="cart-filled-view">
+                <!-- Productos agregados -->
+                <div class="cart-items-list" id="cart-items-list">
+                  <!-- JS dynamically fills -->
+                </div>
+
+                <!-- Resumen de Costos -->
+                <div class="cart-summary-card">
+                  <h3>Resumen del Pedido</h3>
+                  <div class="summary-row">
+                    <span>Subtotal Productos</span>
+                    <span id="cart-subtotal">$0.00</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Costo de Envío</span>
+                    <span class="text-green" id="cart-shipping">¡GRATIS!</span>
+                  </div>
+                  <hr class="summary-divider">
+                  <div class="summary-row total-row">
+                    <span>Total Estimado</span>
+                    <span id="cart-total">$0.00</span>
+                  </div>
+                </div>
+
+                <!-- Formulario de Entrega Obligatorio -->
+                <form class="checkout-form" id="checkout-form">
+                  <h3>Detalles de la Entrega</h3>
+                  
+                  <div class="form-group">
+                    <label for="client-name"><i class="fa-regular fa-user"></i> Nombre Completo</label>
+                    <input type="text" id="client-name" placeholder="Ej. Juan Pérez" required autocomplete="name">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="client-address"><i class="fa-solid fa-location-dot"></i> Dirección Completa</label>
+                    <input type="text" id="client-address" placeholder="Calle, Número y Colonia" required autocomplete="street-address">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="client-reference"><i class="fa-regular fa-comment-dots"></i> Referencias del Lugar</label>
+                    <textarea id="client-reference" rows="2" placeholder="Ej. Casa de dos pisos portón rojo, frente al parque..." required></textarea>
+                  </div>
+
+                  <!-- Botón Enviar WhatsApp -->
+                  <button type="submit" class="whatsapp-submit-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Enviar Pedido por WhatsApp</span>
+                  </button>
+                </form>
+              </div>
+
+            </div>
+          </section>
+
+        </main>
+
+        <!-- NAVEGACIÓN INFERIOR PERSISTENTE (BOTTOM NAV - Modificado sin carrito) -->
+        <nav class="bottom-nav">
+          <button class="nav-item active" data-view="catalog-view">
+            <i class="fa-solid fa-store"></i>
+            <span>Catálogo</span>
+          </button>
+          <button class="nav-item" data-view="bestsellers-view">
+            <i class="fa-solid fa-fire"></i>
+            <span>Favoritos</span>
+          </button>
+          <button class="nav-item" data-view="promos-view">
+            <i class="fa-solid fa-tags"></i>
+            <span>Promos</span>
+          </button>
+          <button class="nav-item" data-view="contact-view">
+            <i class="fa-solid fa-headset"></i>
+            <span>Contacto</span>
+          </button>
+        </nav>
+
+      </div> <!-- Fin de App Shell -->
+
+      <!-- ================= DRAWERS Y OVERLAYS ================= -->
+      
+      <!-- Overlay oscuro de fondo para el Drawer -->
+      <div class="cart-overlay" id="cart-overlay"></div>
+      
+      <!-- Panel lateral deslizante (Drawer) para el carrito de compras -->
+      <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+          <h3><i class="fa-solid fa-cart-shopping drawer-cart-icon"></i> Tu Pedido</h3>
+          <button class="close-drawer-btn" id="close-cart-btn" title="Cerrar pedido">&times;</button>
+        </div>
+        
+        <div class="drawer-body">
+          <div class="cart-container" id="cart-container">
+            
+            <!-- ESTADO VACÍO -->
+            <div class="cart-empty" id="cart-empty-view">
+              <div class="empty-icon-container">
+                <i class="fa-solid fa-basket-shopping empty-cart-basket"></i>
+              </div>
+              <h3>Tu carrito está vacío</h3>
+              <p>Explora nuestro catálogo premium y agrega los mejores cortes y abarrotes para tu hogar.</p>
+              <button class="back-to-shop-btn" id="back-to-shop-btn">Ir al Catálogo</button>
+            </div>
+
+            <!-- LISTADO DE ITEMS E INFORMACIÓN DE PAGO -->
+            <div class="cart-filled hidden" id="cart-filled-view">
+              <!-- Productos agregados -->
+              <div class="cart-items-list" id="cart-items-list">
+                <!-- Se inyecta dinámicamente -->
+              </div>
+
+              <!-- Resumen de Costos -->
+              <div class="cart-summary-card">
+                <h3>Resumen del Pedido</h3>
+                <div class="summary-row">
+                  <span>Subtotal Productos</span>
+                  <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                  <span>Costo de Envío</span>
+                  <span class="text-green" id="cart-shipping">¡GRATIS!</span>
+                </div>
+                <hr class="summary-divider">
+                <div class="summary-row total-row">
+                  <span>Total Estimado</span>
+                  <span id="cart-total">$0.00</span>
+                </div>
+              </div>
+
+              <!-- Formulario de Entrega Obligatorio -->
+              <form class="checkout-form" id="checkout-form">
+                <h3>Detalles de la Entrega</h3>
+                
+                <div class="form-group">
+                  <label for="client-name"><i class="fa-regular fa-user"></i> Nombre Completo</label>
+                  <input type="text" id="client-name" placeholder="Ej. Juan Pérez" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                  <label for="client-address"><i class="fa-solid fa-location-dot"></i> Dirección Completa</label>
+                  <input type="text" id="client-address" placeholder="Calle, Número y Colonia" required autocomplete="street-address">
+                </div>
+                
+                <div class="form-group">
+                  <label for="client-reference"><i class="fa-regular fa-comment-dots"></i> Referencias del Lugar</label>
+                  <textarea id="client-reference" rows="2" placeholder="Ej. Casa portón rojo, frente al parque..." required></textarea>
+                </div>
+
+                <!-- Botón Enviar WhatsApp -->
+                <button type="submit" class="whatsapp-submit-btn">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>Enviar Pedido por WhatsApp</span>
+                </button>
+                
+                <button type="button" class="empty-cart-btn" id="empty-cart-btn" title="Vaciar Carrito">
+                  <i class="fa-regular fa-trash-can"></i> Vaciar Carrito
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COMPONENTES GLOBALMENTE FLOTANTES ================= -->
+      
+      <!-- Simulador de Notificación Push Flotante -->
+      <div class="push-notification-toast" id="push-notification">
+        <div class="notif-toast-content">
+          <div class="notif-toast-icon">
+            <i class="fa-solid fa-bell-concierge"></i>
+          </div>
+          <div class="notif-toast-text">
+            <h5 id="notif-title">Nueva Oferta Premium</h5>
+            <p id="notif-body">¡El Diezmillo hoy tiene un 10% de descuento!</p>
+          </div>
+          <button class="notif-toast-close" id="notif-close-btn">&times;</button>
+        </div>
+      </div>
+
+      <!-- Botón "Volver Arriba" (Scroll to Top) -->
+      <button class="back-to-top-btn hidden" id="back-to-top-btn" title="Volver al inicio">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+
+    </div> <!-- Fin de Pantalla de Teléfono -->
+  </div> <!-- Fin de Contenedor Principal (Phone Frame) -->
+
+  <!-- Modal del Mapa Ampliado -->
+  <div class="modal-backdrop hidden" id="map-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Ubicación de la Sucursal</h3>
+        <button class="close-modal-btn" id="close-map-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.30906297316!2d-103.3496!3d20.6736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDQwJzI1LjAiTiAxMDPCsDIwJzU4LjYiVw!5e0!3m2!1ses-419!2smx!4v1620000000000!5m2!1ses-419!2smx" 
+          width="100%" 
+          height="300" 
+          style="border:0; border-radius: 12px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+        <p class="modal-address"><i class="fa-solid fa-map-pin red-marker"></i> Calle 23 de junio #64, Colonia Centro</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- 
+    Cargamos app-bundle.js (sin type="module") para evitar bloqueos de seguridad CORS 
+    cuando abres index.html haciendo doble clic localmente desde el explorador de archivos (protocolo file://).
+  -->
+  <script src="js/app-bundle.js"></script>
+</body>
+</html>
